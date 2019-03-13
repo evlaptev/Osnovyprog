@@ -1,0 +1,26 @@
+#include <iostream> 
+#include <stdio.h> 
+#include <math.h> 
+
+int main(void) 
+{ 
+float s; 
+int i; 
+int n; 
+int a; 
+float x; 
+printf("n="); 
+scanf("%d", &n); 
+s = 0; 
+i = 1;
+
+while(i <= n ) 
+{ 
+    a = i;
+x = pow(i+1,2);
+i +=1; 
+s += a/x; 
+} 
+printf("Sum=%f\n", s); 
+return 0; 
+}
