@@ -1,13 +1,10 @@
-#include <stdio.h>
-#define MAXLINE 1000
-int prv(char mass[], int begin, int end);
-main()
 {
 	int wlen,N;
 	char str[MAXLINE];
 	char maxw[50];
 	int l,F,j,i,pos,k,max;
 	printf("write a string:\n");
+	memset(str,'\0',MAXLINE);
 	gets(str);
 	l=max=j=0;
 	memset(maxw,'\0',50);
@@ -25,9 +22,9 @@ main()
 		{
 			if (F == 1)
 			{
+				wlen=i-pos;
 				if(prv(str,pos,i)==0)
 				{
-					wlen=i-pos;
 					if(wlen>max)
 					{
 						max=wlen;
@@ -43,11 +40,8 @@ main()
 			pos=i;
 		}
 	}
-	 for( i=k; i<=(k+wlen) ; i++)
-	 {
+	 for( i=k; i<(k+max) ;j++,i++)
 	 	 maxw[j]=str[i];
-	 	 j++;
-	 }
 	 puts(maxw);
 	return 0;
 }
