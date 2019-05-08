@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include<time.h>
+#include<stdlib.h> 
+#define N 10
+
+main()
+{
+	int S[N];
+	int i, hon_n = 0, odd_n = 0;
+	srand(time(NULL));
+	for(i = 0; i < N; i++)
+	{
+		S[i]=(rand()%10);
+		printf("%d ",S[i]);
+	}
+	printf("\n");
+	for(i = 0; i < N; i++)
+	{
+		hon_n = (S[i] % 2 == 0) ? hon_n++ : hon_n ;
+		odd_n = (S[i] % 2 == 1) ? odd_n++ : odd_n ;
+	}
+	if (hon_n > odd_n)
+		for(i = 0 ;	i < N; S[i] = (S[i] % 2 == 1) ? 0 : S[i], i++);
+	else 
+		for(i = 0; i < N; S[i] = (S[i] % 2 == 0) ? 0 : S[i], i++);
+	for(i = 0; i < N; printf("%d ",S[i]), i++);
+	return 0;
+}
