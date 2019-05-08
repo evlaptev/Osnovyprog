@@ -42,6 +42,8 @@
 	}
 	 for( i=k; i<(k+max) ;j++,i++)
 	 	 maxw[j]=str[i];
+	if(k=0)
+	printf("no letters\n");	 
 	 puts(maxw);
 	return 0;
 }
