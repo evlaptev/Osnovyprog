@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include<time.h>
+#include<stdlib.h>
+#define N 10
+#define K 10
+main()
+{
+int S[N][K];
+int i,j;
+float sram=0,sras=0;
+srand(time(NULL));
+for(i=0;i<N;i++)
+{
+for(j=0;j<K;j++)
+{
+S[i][j]=(rand()%10);
+sram+=S[i][j];
+printf("%d ",S[i][j]);
+}
+printf("\n");
+}
+sram/=(N*K);
+printf("\n %f<<\n",sram);
+for(i=0;i<N;i++)
+{
+for(j=0;j<K;j++)
+sras+=S[i][j];
+if((sras/K)<sram)
+for(j=0; j < K; S[i][j]=0,j++);
+sras=0;
+}
+for(i=0;i<N;i++)
+{
+for(j=0;j<K;j++)
+printf("%d ",S[i][j]);
+printf("\n");
+}
+return 0;
+}
