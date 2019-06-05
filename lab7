@@ -15,6 +15,8 @@ N&=(~mask);
 mask>>=1;
 }
 bp(N);
+getchar();
+getchar();
 return 0;
 }
 lengt(int num)
@@ -26,9 +28,10 @@ return i-1;
 }
 void bp(long a)
 {
+	int i;
 unsigned mask = 0x80000000;
 printf("binary number: ");
-for (int i = 1; i <= (sizeof(a) * 8); i++)
+for ( i = 1; i <= (sizeof(a) * 8); i++)
 {
 if (a & mask)
 printf("1");
