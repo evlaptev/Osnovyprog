@@ -1,0 +1,42 @@
+#include <stdio.h>
+int lengt(int a);
+void bp(long a);
+main()
+{
+unsigned int mask=0x1;
+int i=0,N,l;
+scanf("%d",&N);
+bp(N);
+l=lengt(N);
+mask<<=l-1;
+for(i=0; i <= l; i++)
+{
+N&=(~mask);
+mask>>=1;
+}
+bp(N);
+return 0;
+}
+lengt(int num)
+{
+int i;
+for(i=0; num!=0; i++)
+num=num/2;
+return i-1;
+}
+void bp(long a)
+{
+unsigned mask = 0x80000000;
+printf("binary number: ");
+for (int i = 1; i <= (sizeof(a) * 8); i++)
+{
+if (a & mask)
+printf("1");
+else
+printf("0");
+if ((i % 8) == 0)
+printf(" ");
+mask = mask>>1;
+}
+printf("\n");
+}
